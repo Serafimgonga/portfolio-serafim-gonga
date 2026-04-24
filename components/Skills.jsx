@@ -33,7 +33,7 @@ export default function Skills() {
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-all duration-300 group/item cursor-pointer"
                   >
                     <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 group-hover/item:scale-150 transition-transform"></span>
-                    <span className="text-slate-700 dark:text-slate-300 group-hover/item:text-slate-900 dark:group-hover/item:text-white font-medium transition-colors">{item}</span>
+                    <span className="text-slate-800 dark:text-slate-100 group-hover/item:text-slate-900 dark:group-hover/item:text-white font-medium transition-colors">{item}</span>
                   </div>
                 ))}
               </div>

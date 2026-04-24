@@ -1,0 +1,208 @@
+export const portfolioData = {
+  personal: {
+    name: 'Serafim Adão Gonga',
+    title: 'Software Engineer & Functional Analyst',
+    subtitle: 'Transformo requisitos de negócio em soluções tecnológicas escaláveis',
+    email: 'serafimag2020@gmail.com',
+    phone: '+244 945 176 834',
+    location: 'Luanda, Ícolo e Bengo',
+    website: 'serafimgonga.dev',
+    bio: 'Software Engineer com forte atuação em Análise Funcional e levantamento de requisitos, servindo como ponte entre stakeholders de negócio e equipas técnicas. Experiência na definição de requisitos funcionais e não funcionais, modelagem de processos e apoio à entrega de soluções alinhadas às necessidades do cliente.',
+    image: '/avatar.jpg',
+  },
+
+  social: [
+    { name: 'GitHub', url: 'https://github.com', icon: 'github' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/serafim-gonga-08075b2a9', icon: 'linkedin' },
+    { name: 'Email', url: 'mailto:serafimag2020@gmail.com', icon: 'mail' },
+    { name: 'WhatsApp', url: 'https://wa.me/244945176834', icon: 'whatsapp' },
+  ],
+
+  skills: [
+    {
+      category: 'Análise Funcional',
+      items: ['Levantamento de Requisitos', 'BRD/FRD', 'Casos de Uso', 'User Stories', 'Especificação Funcional'],
+      color: 'from-blue-500 to-cyan-500',
+    },
+    {
+      category: 'Modelagem de Processos',
+      items: ['BPMN', 'Fluxogramas', 'Mapeamento AS-IS/TO-BE', 'Identificação de Gaps', 'Propostas de Melhoria'],
+      color: 'from-green-500 to-emerald-500',
+    },
+    {
+      category: 'Backend & APIs',
+      items: ['Node.js', 'ASP.NET MVC', 'RESTful APIs', 'Entity Framework', 'Express.js'],
+      color: 'from-orange-500 to-red-500',
+    },
+    {
+      category: 'Frontend',
+      items: ['React.js', 'Next.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
+      color: 'from-pink-500 to-rose-500',
+    },
+    {
+      category: 'Banco de Dados',
+      items: ['SQL Server', 'PostgreSQL', 'Modelagem Relacional', 'ACID', 'Triggers & Stored Procedures'],
+      color: 'from-purple-500 to-indigo-500',
+    },
+    {
+      category: 'DevOps & Cloud',
+      items: ['Docker', 'AWS', 'Linux', 'Bash/Shell', 'SSH', 'CI/CD Básico'],
+      color: 'from-yellow-500 to-orange-500',
+    },
+    {
+      category: 'Metodologias',
+      items: ['Agile', 'Scrum', 'Análise Estruturada', 'Ciclo de Vida de Projeto', 'Gestão de Requisitos'],
+      color: 'from-teal-500 to-cyan-500',
+    },
+    {
+      category: 'Linguagens',
+      items: ['C#', 'Python', 'JavaScript', 'C', 'C++', 'Bash'],
+      color: 'from-slate-500 to-gray-500',
+    },
+  ],
+
+  experience: [
+    {
+      id: 1,
+      role: 'Programador / Analista Funcional',
+      company: 'DH-IT',
+      location: 'Luanda',
+      period: 'jul 2020 – mar 2023',
+      duration: '2 anos 9 meses',
+      highlights: [
+        'Participação activa no levantamento e análise de requisitos funcionais em contacto directo com clientes e stakeholders',
+        'Tradução de necessidades de negócio em especificações técnicas detalhadas para a equipa de desenvolvimento',
+        'Modelagem e documentação de fluxos de processos de negócio, contribuindo para a melhoria contínua de sistemas',
+        'Desenvolvimento e manutenção de aplicações web em ASP.NET MVC e SQL Server',
+        'Integração de sistemas internos, reduzindo tempo de resposta em ~40%',
+        'Colaboração transversal com equipas técnicas e de negócio na entrega de soluções end-to-end',
+      ],
+    },
+    {
+      id: 2,
+      role: 'Analista / Desenvolvedor Freelance',
+      company: 'Independente',
+      location: 'Luanda',
+      period: 'jan 2019 – atual',
+      duration: '5+ anos',
+      highlights: [
+        'Gestão completa do ciclo de vida de projectos tecnológicos: análise, especificação, desenvolvimento, entrega e suporte',
+        'Levantamento detalhado de requisitos junto a clientes, produzindo documentação funcional clara e rastreável',
+        'Desenvolvimento de aplicações web e mobile personalizadas (React.js, Node.js, .NET MAUI, React Native)',
+        'Comunicação contínua com clientes para alinhamento de expectativas e validação de entregas',
+        '20+ projetos completados com taxa de satisfação de 98%',
+      ],
+    },
+  ],
+
+  projects: [
+    {
+      id: 1,
+      title: 'Sistema de Gestão para Escola de Condução (CSN)',
+      description: 'Aplicação desktop completa para gestão de escola de condução. Desenvolvida como projeto final de curso com foco em Análise Funcional e aplicação de padrões de desenvolvimento.',
+      image: '/projects/csn.jpg',
+      role: 'Analista Funcional & Desenvolvedor',
+      technologies: ['C#', 'Windows Forms', 'SQL Server', 'Entity Framework', 'POO'],
+      features: [
+        'Gestão completa de alunos (cadastro, inscrições, notas)',
+        'Agendamento inteligente de aulas',
+        'Controlo de instrutores e viaturas',
+        'Gestão financeira (pagamentos, facturas)',
+        'Relatórios detalhados e exportação de dados',
+        'Autenticação e controlo de acesso baseado em roles',
+      ],
+      timeline: '3-4 meses',
+      status: 'Concluído',
+      link: 'https://github.com',
+    },
+    {
+      id: 2,
+      title: 'Plataforma de E-learning (Projeto Freelance)',
+      description: 'Aplicação web moderna para gestão de cursos online. Desenvolvida com React.js no frontend e Node.js no backend, com suporte a múltiplos utilizadores e conteúdo dinâmico.',
+      image: '/projects/elearning.jpg',
+      role: 'Full-Stack Developer',
+      technologies: ['React.js', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS S3'],
+      features: [
+        'Catálogo de cursos com busca e filtros avançados',
+        'Sistema de pagamento integrado (Stripe)',
+        'Dashboard do aluno com progresso de aprendizagem',
+        'Upload e streaming de vídeos',
+        'Sistema de quiz e avaliações',
+        'Certificados digitais',
+      ],
+      timeline: '2 meses',
+      status: 'Concluído',
+      link: 'https://github.com',
+    },
+    {
+      id: 3,
+      title: 'API RESTful para Sistema de Gestão de Inventário',
+      description: 'Backend robusto para sistema de gestão de inventário em tempo real. Desenvolvido em ASP.NET Core com documentação OpenAPI/Swagger e testes unitários.',
+      image: '/projects/inventory.jpg',
+      role: 'Backend Developer',
+      technologies: ['ASP.NET Core', 'SQL Server', 'Swagger/OpenAPI', 'xUnit', 'Docker'],
+      features: [
+        'CRUD completo de produtos e categorias',
+        'Controlo de stock com alertas automáticos',
+        'Relatórios de movimentação',
+        'Autenticação JWT',
+        'Rate limiting e validação robusta',
+        'Documentação interativa com Swagger',
+      ],
+      timeline: '6 semanas',
+      status: 'Concluído',
+      link: 'https://github.com',
+    },
+  ],
+
+  education: [
+    {
+      id: 1,
+      degree: 'Engenharia de Software',
+      institution: 'Escola 42 Luanda',
+      location: 'Talatona',
+      period: 'jun 2024 – atual',
+      status: 'Em curso',
+      details: 'Formação intensiva baseada em projectos reais, metodologia peer-to-peer sem docentes. Linguagens: C, C++, Bash e sistemas — foco em raciocínio lógico, autonomia e resolução criativa de problemas.',
+    },
+    {
+      id: 2,
+      degree: 'Curso de Informática (Ensino Médio)',
+      institution: 'Colégio Carvajú',
+      period: 'Concluído',
+      status: 'Concluído',
+      details: 'Projeto final: Sistema de Gestão para Escola de Condução — aplicação desktop em C# / SQL Server.',
+    },
+  ],
+
+  certifications: [
+    {
+      id: 1,
+      title: 'Desenvolvimento Back-end em C# com .NET',
+      issuer: 'Rocketseat',
+      date: 'dez 2024',
+      skills: ['Controllers', 'DDD', 'Entity Framework', 'Swagger'],
+    },
+    {
+      id: 2,
+      title: 'Desenvolvimento Web com C# e ASP.NET MVC',
+      issuer: 'Udemy',
+      date: 'mar 2021',
+      skills: ['CRUD', 'Entity Framework', 'Razor', 'Data Annotations'],
+    },
+    {
+      id: 3,
+      title: 'React do Zero à Maestria',
+      issuer: 'Udemy',
+      date: '2020',
+      skills: ['Hooks', 'React Router', 'Axios', 'APIs REST'],
+    },
+  ],
+
+  stats: {
+    experience: '5+',
+    projects: '20+',
+    satisfaction: '98%',
+    countries: '3+',
+  },
+};

@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors;
+  background-image: 
+    radial-gradient(at 20% 50%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(34, 197, 232, 0.05) 0px, transparent 50%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Selection */
+::selection {
+  @apply bg-blue-600 text-white;
+}
+
+::-moz-selection {
+  @apply bg-blue-600 text-white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-blue-500 to-cyan-500 rounded-lg hover:from-blue-600 hover:to-cyan-600;
+}
+
+/* Link Styles */
+a {
+  @apply transition-all duration-300;
+}
+
+a:focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded;
+}
+
+dark a:focus-visible {
+  @apply ring-offset-slate-900;
+}
+
+/* Input Styles */
+input, textarea {
+  @apply transition-all duration-300;
+}
+
+input:focus, textarea:focus {
+  @apply ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-slate-900;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  @apply backdrop-blur-md bg-white/30 dark:bg-slate-900/30 border border-white/20 dark:border-slate-700/20;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+/* Professional Shadow */
+.shadow-professional {
+  @apply shadow-lg hover:shadow-2xl;
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+dark input:focus, dark textarea:focus {
+  @apply ring-offset-slate-900;
+}
+
+/* Buttons */
+button {
+  @apply transition-all;
+}
+
+button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Cards */
+.card {
+  @apply p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-lg transition;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+/* Section Headings */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    @apply bg-white text-slate-900;
+  }
+
+  .no-print {
+    @apply hidden;
+  }
+}

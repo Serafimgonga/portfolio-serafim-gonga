@@ -5,7 +5,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden">
-      {/* Decorative Background */}
+      {/* Fundo Decorativo */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
@@ -31,7 +31,7 @@ export default function Projects() {
               {/* Gradient Border Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              {/* Project Image */}
+              {/* Imagem do Projeto */}
               <div className="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center relative overflow-hidden group-hover:from-blue-600 group-hover:to-cyan-600 transition-colors duration-500">
                 <div className="text-6xl group-hover:scale-125 transition-transform duration-500">
                   {getProjectEmoji(project.id)}
@@ -39,7 +39,7 @@ export default function Projects() {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black/20 to-transparent transition-opacity duration-500"></div>
               </div>
 
-              {/* Project Content */}
+              {/* Conteúdo do Projeto */}
               <div className="p-6 space-y-4 bg-white dark:bg-slate-900 relative z-10">
                 {/* Title & Status */}
                 <div>
@@ -108,7 +108,7 @@ export default function Projects() {
                   </span>
                 </div>
 
-                {/* Project Link */}
+                {/* Link do Projeto */}
                 <a
                   href={project.link}
                   target="_blank"

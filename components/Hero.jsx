@@ -5,7 +5,7 @@ export default function Hero() {
 
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
-      {/* Decorative Elements */}
+      {/* Elementos Decorativos */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
       <div className="absolute -bottom-8 left-20 w-72 h-72 bg-cyan-200 dark:bg-cyan-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
 
@@ -37,7 +37,7 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* CTA Buttons */}
+          {/* Botões CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <a
               href="#projects"
@@ -56,7 +56,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Social Links */}
+          {/* Links Sociais */}
           <div className="flex justify-center gap-4 pt-4">
             {social.map((link, index) => (
               <a

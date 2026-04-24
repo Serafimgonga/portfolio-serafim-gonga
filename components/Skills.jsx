@@ -41,7 +41,7 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Proficiency Levels */}
+        {/* Níveis de Proficiência */}
         <div className="mt-16 space-y-8">
           <div className="text-center space-y-2">
             <h3 className="text-3xl font-bold text-slate-900 dark:text-white">

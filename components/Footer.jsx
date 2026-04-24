@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Links Rápidos */}
           <div>
             <h4 className="font-semibold text-white mb-4">Navegação</h4>
             <ul className="space-y-2 text-sm">

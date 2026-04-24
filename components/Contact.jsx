@@ -40,7 +40,7 @@ export default function Contact() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/* Formulário de Contacto */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -120,7 +120,7 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* Contact Info */}
+          {/* Informações de Contacto */}
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
@@ -177,7 +177,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Social Links */}
+            {/* Links Sociais */}
             <div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
                 Siga-me Nas Redes
@@ -198,7 +198,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Quick Response */}
+            {/* Resposta Rápida */}
             <div className="p-6 rounded-lg bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800">
               <p className="text-sm text-blue-900 dark:text-blue-100">
                 <span className="font-semibold">⚡ Resposta Rápida:</span> Respondo a todos os enquiries em menos de 24 horas.

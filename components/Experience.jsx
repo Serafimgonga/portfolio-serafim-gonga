@@ -10,7 +10,7 @@ export default function Experience() {
           Experiência & Formação
         </h2>
 
-        {/* Experience Timeline */}
+        {/* Linha Temporal de Experiência */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">Experiência Profissional</h3>
           <div className="space-y-8">

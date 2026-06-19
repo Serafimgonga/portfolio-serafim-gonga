@@ -10,16 +10,19 @@ export interface MediaItemType {
   desc: string;
   url: string;
   span: string;
+  thumbnail?: string;
 }
 
 const MediaItem = ({
   item,
   className,
   onClick,
+  isModal = false,
 }: {
   item: MediaItemType;
   className?: string;
   onClick?: () => void;
+  isModal?: boolean;
 }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isInView, setIsInView] = useState(false);
@@ -46,6 +49,30 @@ const MediaItem = ({
   }, [isInView, item.type]);
 
   if (item.type === "video") {
+    if (!isModal && item.thumbnail) {
+      return (
+        <img
+          src={item.thumbnail}
+          alt={item.title}
+          className={className}
+          loading="lazy"
+          onClick={onClick}
+        />
+      );
+    }
+
+    if (item.url.includes("drive.google.com")) {
+      const embedUrl = item.url.replace(/\/view(\?.*)?$/, "/preview");
+      return (
+        <iframe
+          src={embedUrl}
+          className={`${className} border-0`}
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        />
+      );
+    }
+
     return (
       <video
         ref={videoRef}
@@ -108,6 +135,7 @@ const GalleryModal = ({
             <MediaItem
               item={selectedItem}
               className="h-full w-full object-contain"
+              isModal={true}
             />
           </div>
           <div className="border-t border-white/5 p-5 sm:p-6">

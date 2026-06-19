@@ -449,11 +449,12 @@ const demoMediaItems: MediaItemType[] = [
   },
   {
     id: 5,
-    type: "image",
-    title: "AlphaHydrae · Painel de Segurança",
-    desc: "Visualização em tempo real de incidentes e playbooks automatizados.",
-    url: projAlphaHydrae,
+    type: "video",
+    title: "AlphaHydrae · Resposta a Incidentes",
+    desc: "Demonstração da detecção de incidentes, automação com N8N e parecer técnico por IA.",
+    url: "https://drive.google.com/file/d/1xA05KCmdhccAdj7xtKDONj44LOTDd3GP/view?usp=sharing",
     span: "md:col-span-2 md:row-span-1",
+    thumbnail: projAlphaHydrae,
   },
 ];
 

@@ -12,7 +12,7 @@ import { ElegantShapes } from "@/components/portfolio/ElegantShapes";
 import InteractiveBentoGallery, { type MediaItemType } from "@/components/ui/interactive-bento-gallery";
 import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import FeedbackSlider from "@/components/ui/feedback-slider";
-const portrait = "/assets/portrait.jpg";
+const portrait = "/assets/foto.png";
 const projMapazzz = "/assets/project-mapazzz.jpg";
 const projKorta = "/assets/project-korta.jpg";
 const projSigad = "/assets/project-sigad.jpg";

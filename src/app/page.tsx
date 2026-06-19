@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import {
   ArrowRight, Download, Mail, Github, Linkedin, MapPin, Phone,
   Code2, Database, Server, Cloud, Sparkles, Briefcase, GraduationCap,
-  ExternalLink, Terminal, Zap, Layers, Globe,
+  ExternalLink, Zap, Layers, Globe,
 } from "lucide-react";
 import { Spotlight } from "@/components/portfolio/Spotlight";
 import { Counter } from "@/components/portfolio/Counter";
@@ -16,6 +16,7 @@ const portrait = "/assets/portrait.jpg";
 const projMapazzz = "/assets/project-mapazzz.jpg";
 const projKorta = "/assets/project-korta.jpg";
 const projSigad = "/assets/project-sigad.jpg";
+const projAlphaHydrae = "/assets/alpha-hydrae.png";
 const demoSigad = { url: "/videos/demo-sigad.mp4" };
 const demoMapazzz = { url: "/videos/demo-mapazzz.mp4" };
 
@@ -28,6 +29,21 @@ const fadeUp = {
 const companies = ["DH-IT", "IMOGESTIN", "42 Luanda", "Rocketseat", "Hackathon 42", "KORTA"];
 
 const caseStudies = [
+  {
+    title: "AlphaHydrae — Detecção e Resposta a Incidentes",
+    client: "Hackathon de Cibersegurança · ANGOTIC 2026",
+    problem: "As organizações angolanas enfrentam um desafio crítico: infraestruturas digitais crescem mais rápido do que a capacidade de as proteger. Sem automação, a detecção de incidentes leva de 6 a 8 horas.",
+    solution: "Desenvolvi um sistema inteligente de detecção e resposta automática (SOAR) que orquestra workflows via N8N e analisa eventos de incidentes usando IA Generativa (Google Gemini), reduzindo o tempo de resposta para 2-3 minutos.",
+    stack: ["React", "Django Ninja", "Python", "N8N", "Google Gemini AI", "PostgreSQL"],
+    results: [
+      { k: "2-3 min", v: "tempo de resposta" },
+      { k: "< 1 seg", v: "tempo de detecção" },
+      { k: "−80%+", v: "carga de trabalho manual" },
+    ],
+    image: projAlphaHydrae,
+    liveUrl: "https://alpha-hydrae.vercel.app/",
+    videoUrl: "https://drive.google.com/file/d/1xA05KCmdhccAdj7xtKDONj44LOTDd3GP/view?usp=sharing"
+  },
   {
     title: "SIGAD — Sistema de Avaliação de Desempenho",
     client: "IMOGESTIN · via DH-IT",
@@ -57,6 +73,7 @@ const caseStudies = [
 ];
 
 const projects = [
+  { name: "AlphaHydrae", desc: "Sistema inteligente (SOAR) de resposta automatizada a incidentes com IA.", stack: ["Django Ninja", "N8N", "Gemini AI", "React"], img: projAlphaHydrae, link: "https://alpha-hydrae.vercel.app/" },
   { name: "KORTA", desc: "Barber on-demand platform — pedidos ao domicílio com base em geolocalização.", stack: ["Next.js", "Node.js", "PostgreSQL"], img: projKorta, link: "#" },
   { name: "Mapazzz", desc: "Mapa colaborativo de risco de malária e educação comunitária.", stack: ["React", "Figma", "Node.js"], img: projMapazzz, link: "#" },
   { name: "SIGAD", desc: "Sistema desktop de avaliação de desempenho para IMOGESTIN.", stack: ["C#", ".NET", "SQL Server"], img: projSigad, link: "#" },
@@ -101,7 +118,6 @@ export default function Page() {
         <Services />
         <TechStack />
         <Experience />
-        <Terminal_ />
         <FeedbackExperience />
         <Contact />
       </main>
@@ -307,6 +323,31 @@ function CaseStudies() {
                       </div>
                     ))}
                   </div>
+
+                  {("liveUrl" in cs || "videoUrl" in cs) && (
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      {cs.liveUrl && (
+                        <a
+                          href={cs.liveUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 border border-primary/30 px-4 py-2 text-xs font-semibold text-primary transition-colors hover:bg-primary/20"
+                        >
+                          Visitar Web <ExternalLink className="h-3 w-3" />
+                        </a>
+                      )}
+                      {cs.videoUrl && (
+                        <a
+                          href={cs.videoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-full bg-white/5 border border-white/15 px-4 py-2 text-xs font-semibold text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
+                        >
+                          Ver Vídeo Demo <ExternalLink className="h-3 w-3" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div className={`relative overflow-hidden rounded-2xl border border-white/10 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
@@ -406,6 +447,14 @@ const demoMediaItems: MediaItemType[] = [
     url: projSigad,
     span: "md:col-span-2 md:row-span-1",
   },
+  {
+    id: 5,
+    type: "image",
+    title: "AlphaHydrae · Painel de Segurança",
+    desc: "Visualização em tempo real de incidentes e playbooks automatizados.",
+    url: projAlphaHydrae,
+    span: "md:col-span-2 md:row-span-1",
+  },
 ];
 
 function Demos() {
@@ -430,6 +479,7 @@ function Demos() {
 /* ------------------- ZOOM PARALLAX SHOWCASE ------------------- */
 function ZoomShowcase() {
   const images = [
+    { src: projAlphaHydrae, alt: "AlphaHydrae dashboard" },
     { src: projSigad, alt: "SIGAD dashboard" },
     { src: projKorta, alt: "KORTA wallet" },
     { src: projMapazzz, alt: "Mapazzz mapa" },
@@ -566,39 +616,6 @@ function Experience() {
   );
 }
 
-/* ------------------- TERMINAL ------------------- */
-function Terminal_() {
-  const lines = [
-    { p: "$ whoami", t: "serafim — fullstack engineer" },
-    { p: "$ location", t: "Luanda, Angola · open to remote" },
-    { p: "$ stack", t: ".NET · React · PostgreSQL · Docker" },
-    { p: "$ currently", t: "Building KORTA + studying at 42 Luanda" },
-    { p: "$ status", t: "available_for_hire = true" },
-  ];
-  return (
-    <section className="px-6 py-20">
-      <div className="mx-auto max-w-3xl">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="overflow-hidden rounded-2xl border border-white/10 bg-card/80 font-mono shadow-2xl">
-          <div className="flex items-center gap-1.5 border-b border-white/10 bg-background/50 px-4 py-2.5">
-            <span className="h-3 w-3 rounded-full bg-red-500/70" />
-            <span className="h-3 w-3 rounded-full bg-yellow-500/70" />
-            <span className="h-3 w-3 rounded-full bg-green-500/70" />
-            <span className="ml-3 inline-flex items-center gap-1.5 text-xs text-muted-foreground"><Terminal className="h-3 w-3" /> serafim@portfolio ~ </span>
-          </div>
-          <div className="space-y-2 p-5 text-sm leading-relaxed">
-            {lines.map((l) => (
-              <div key={l.p}>
-                <span className="text-primary">{l.p}</span>
-                <div className="pl-2 text-muted-foreground">→ <span className="text-foreground">{l.t}</span></div>
-              </div>
-            ))}
-            <div className="pt-2"><span className="text-primary">$ </span><span className="inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-primary" /></div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 /* ------------------- CONTACT ------------------- */
 function Contact() {

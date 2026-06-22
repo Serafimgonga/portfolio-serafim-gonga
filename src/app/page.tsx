@@ -93,7 +93,7 @@ const projects = [
     desc: "API para consulta de dados fiscais por NIF em Angola com cache, rate limit e comprovativos em PDF.",
     stack: ["FastAPI", "Python", "Playwright", "Docker"],
     img: "/assets/project-sigad.jpg",
-    link: "#"
+    link: "https://sepe-nif-api-1.onrender.com/docs#/Consultas%20NIF/get_nif_nif__numero__get"
   },
   {
     name: "SaaS B2B & Bots",

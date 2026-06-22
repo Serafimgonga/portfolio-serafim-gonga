@@ -126,7 +126,6 @@ export default function Page() {
         <Hero />
         <Metrics />
         <CaseStudies />
-        <ZoomShowcase />
         <Projects />
         <Demos />
         <Services />
@@ -884,35 +883,6 @@ function Demos() {
   );
 }
 
-/* ------------------- ZOOM PARALLAX SHOWCASE ------------------- */
-function ZoomShowcase() {
-  const images = [
-    { src: projAlphaHydrae, alt: "AlphaHydrae dashboard" },
-    { src: projSigad, alt: "SIGAD dashboard" },
-    { src: projKorta, alt: "KORTA wallet" },
-    { src: projMapazzz, alt: "Mapazzz mapa" },
-    { src: portrait, alt: "Serafim Gonga" },
-    { src: projSigad, alt: "SIGAD relatórios" },
-    { src: projKorta, alt: "KORTA pagamentos" },
-    { src: projMapazzz, alt: "Mapazzz risco" },
-  ];
-  return (
-    <section className="relative">
-      <div className="px-6 pt-28 pb-10">
-        <div className="mx-auto max-w-6xl text-center">
-          <SectionLabel icon={Sparkles}>Imersão visual</SectionLabel>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-            Faz scroll para <strong className="font-semibold text-foreground">mergulhar</strong> no trabalho.
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-            Um passeio cinematográfico pelos produtos que construí.
-          </p>
-        </div>
-      </div>
-      <ZoomParallax images={images} />
-    </section>
-  );
-}
 
 /* ------------------- SERVICES (impl) ------------------- */
 function ServicesImpl() {

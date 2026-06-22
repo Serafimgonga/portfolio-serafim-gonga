@@ -137,6 +137,13 @@ const projects = [
     img: "/assets/alpha-hydrae.png",
     link: "https://alpha-hydrae.vercel.app/"
   },
+  {
+    name: "VerifiCa",
+    desc: "Plataforma Nacional de Confiança Digital para combater fraudes digitais em Angola com IA, denúncias comunitárias e canais inclusivos — Hackathon ANGOTIC 2026.",
+    stack: ["Next.js", "ASP.NET Core", "PostgreSQL", "OpenAI API", "Claude API"],
+    img: "/assets/Verifica.png",
+    link: "https://verifica-burla.vercel.app/"
+  },
 ];
 
 const services = [
@@ -796,14 +803,13 @@ function Services() {
 /* ------------------- DEMOS ------------------- */
 const demoMediaItems: MediaItemType[] = [
 
-
   {
     id: 1,
     type: "video",
     title: "SEPE NIF API — Consulta Fiscal",
     desc: "Demonstração em vídeo do funcionamento da API e retorno JSON.",
     url: "/videos/Api-Nif/video.mp4",
-    span: "md:col-span-2 md:row-span-1",
+    span: "md:col-span-2 md:row-span-2",
     thumbnail: "/assets/Api-Nif/tela.png",
   },
   {
@@ -830,6 +836,15 @@ const demoMediaItems: MediaItemType[] = [
     desc: "Painel de indicadores e ciclo de prémios.",
     url: projSigad,
     span: "md:col-span-2 md:row-span-1",
+  },
+  {
+    id: 5,
+    type: "video",
+    title: "VerifiCa — Plataforma de Confiança Digital",
+    desc: "Detecção de fraudes, phishing e chamadas suspeitas com IA. Plataforma inclusiva com USSD e SMS. Hackathon ANGOTIC 2026.",
+    url: "https://drive.google.com/file/d/1EoXhTynxB60ehdaEvglPxl5iLEOUOI9L/view?usp=sharing",
+    span: "md:col-span-2 md:row-span-1",
+    thumbnail: "/assets/Verifica.png",
   },
 
 ];

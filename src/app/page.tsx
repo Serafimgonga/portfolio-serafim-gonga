@@ -233,11 +233,11 @@ function Hero() {
 
 
             <div className="space-y-1.5">
-              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-                Construo sistemas
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
+                Reduzo horas de trabalho manual
               </h1>
               <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-                que automatizam processos e <strong className="font-semibold text-foreground">escalam com o teu negócio</strong>.
+                através de <strong className="font-semibold text-foreground">software inteligente</strong>.
               </p>
             </div>
 
@@ -322,20 +322,35 @@ function Hero() {
             className="flex flex-col gap-5 text-left order-3 lg:pl-4 max-w-[380px] lg:ml-auto w-full"
           >
             <div className="space-y-1.5">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-                De ideias a produtos reais
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
+                Da ideia à produção.
               </h2>
-              <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-                com foco em soluções que geram <strong className="font-semibold text-foreground">resultados mensuráveis</strong> e valor real.
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Entrega ponta a ponta com rigor de engenharia:
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
+              {[
+                "Arquitetura",
+                "Desenvolvimento",
+                "Deploy",
+                "Escalabilidade",
+                "+20 projetos",
+                "42 Luanda",
+              ].map((label) => (
+                <span key={label} className="inline-flex items-center rounded-full border border-white/10 bg-white/3 px-3 py-1 text-[11px] font-semibold text-muted-foreground">
+                  {label}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3 mt-2">
               <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground glow-green transition-transform hover:scale-[1.03]">
-                Ver Projetos <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                Explorar Projetos <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
               <a href="https://serafimgonga.dev" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-5 py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-                <Download className="h-4 w-4" /> Baixar CV
+                <Download className="h-4 w-4" /> Download CV
               </a>
             </div>
           </motion.div>
@@ -358,7 +373,7 @@ const aboutCards = [
     body: "Sou Serafim Adão Gonga, Software Engineer focado em construir soluções digitais que resolvem problemas reais. Combino visão de produto, engenharia e execução para entregar resultados que geram valor.",
     stat: "7+",
     statLabel: "anos de aprendizagem contínua",
-    accent: "Software Engineer · Angola",
+    accent: "Software Engineer",
     color: "from-primary/20 to-transparent",
     dotColor: "bg-primary",
   },

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, Download, Mail, Github, Linkedin, MapPin, Phone,
   Code2, Database, Server, Cloud, Sparkles, Briefcase, GraduationCap,
-  ExternalLink, Zap, Layers, Globe, Menu, X,
+  ExternalLink, Zap, Layers, Globe, Menu, X, Check,
 } from "lucide-react";
 
 import { Counter } from "@/components/portfolio/Counter";
@@ -275,6 +275,17 @@ function Hero() {
                   <img src="./assets/foto.jpg" alt="Serafim Gonga" className="h-full w-full object-cover" />
                 </div>
 
+                {/* 42 Luanda Seal */}
+                <div className="absolute -bottom-4 -right-4 z-30 flex items-center gap-2 rounded-xl border border-warning/30 bg-card/90 backdrop-blur px-3 py-2 text-[10px] font-medium text-foreground shadow-2xl pointer-events-auto select-none transition-transform hover:scale-105">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-warning/15 text-warning shrink-0">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  <div className="text-left leading-tight">
+                    <div className="font-bold text-[10.5px]">42 Luanda</div>
+                    <div className="text-[9.5px] text-muted-foreground">Common Core Graduate</div>
+                  </div>
+                </div>
+
                 {/* Rotating orbit container */}
                 <div className="absolute inset-0 animate-orbit w-full h-full pointer-events-none z-20">
                   {orbitItems.map((item, idx) => {
@@ -343,41 +354,41 @@ function Hero() {
 const aboutCards = [
   {
     tag: "Quem sou",
-    headline: "Não sou só um dev. Sou quem resolve o problema antes de escrever uma linha.",
-    body: "Chamo-me Serafim Adão Gonga. Penso como engenheiro, entrego como profissional. Transformo requisitos nebulosos em sistemas que as pessoas realmente usam — e adoram usar.",
+    headline: "Transformo ideias ambiciosas em produtos reais, escaláveis e prontos para crescer.",
+    body: "Sou Serafim Adão Gonga, Software Engineer focado em construir soluções digitais que resolvem problemas reais. Combino visão de produto, engenharia e execução para entregar resultados que geram valor.",
     stat: "7+",
-    statLabel: "anos a construir",
-    accent: "Fullstack Engineer · Angola",
+    statLabel: "anos de aprendizagem contínua",
+    accent: "Software Engineer · Angola",
     color: "from-primary/20 to-transparent",
     dotColor: "bg-primary",
   },
   {
-    tag: "O que faço",
-    headline: "Do primeiro commit à última linha de documentação — sem deixar nada para trás.",
-    body: "Já levei produtos do zero à produção: arquitetura, base de dados, APIs, interfaces, testes e suporte. Não entrego código — entrego sistemas que funcionam.",
+    tag: "O que construo",
+    headline: "Da estratégia à produção. Sem depender de equipas enormes.",
+    body: "Desenvolvo aplicações completas, desde arquitetura e APIs até interfaces modernas e infraestrutura. Trabalho com foco em desempenho, segurança e experiência do utilizador.",
     stat: "20+",
-    statLabel: "projetos entregues",
+    statLabel: "projetos desenvolvidos",
     accent: ".NET · Node.js · React · PostgreSQL",
     color: "from-secondary/20 to-transparent",
     dotColor: "bg-secondary",
   },
   {
-    tag: "Onde me formo",
-    headline: "Aprendo do jeito difícil. De propósito. É assim que fico melhor.",
-    body: "Na 42 Luanda aprendo C/C++ e algoritmos sem professores, sem respostas prontas — só peer learning e problemas reais. É brutal. É o que me forma como engenheiro de verdade.",
-    stat: "42",
-    statLabel: "escola · Luanda",
-    accent: "C · C++ · Algoritmos · Peer Learning",
+    tag: "42 Luanda",
+    headline: "Common Core concluído. Nível Transcender alcançado.",
+    body: "Percorri um percurso intensivo de engenharia de software focado em algoritmos, sistemas, arquitetura de software e resolução de problemas na 42 Luanda. A experiência baseada em peer learning reforçou a minha capacidade de aprender rapidamente e enfrentar desafios técnicos complexos.",
+    stat: "Transcender",
+    statLabel: "Nível na 42 Luanda",
+    accent: "42 Luanda Common Core Graduate",
     color: "from-warning/15 to-transparent",
     dotColor: "bg-warning",
   },
   {
-    tag: "Como penso",
-    headline: "Se não mede, não conta. Bom código é código com impacto real.",
-    body: "Automatização, clareza e entrega consistente. Acredito que o melhor software é o que poupa horas de trabalho humano — e que um engenheiro bom é aquele que torna o próximo mais capaz.",
+    tag: "A minha filosofia",
+    headline: "Tecnologia só tem valor quando gera impacto mensurável.",
+    body: "Acredito em automação, simplicidade e melhoria contínua. O melhor software é aquele que reduz complexidade, aumenta produtividade e cria novas oportunidades para pessoas e organizações.",
     stat: "80%",
-    statLabel: "menos trabalho manual",
-    accent: "Clean Code · DevOps · Automação",
+    statLabel: "potencial de automação",
+    accent: "Clean Code · DevOps · IA",
     color: "from-chart-5/15 to-transparent",
     dotColor: "bg-chart-5",
   },
@@ -454,11 +465,10 @@ function Metrics() {
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold tracking-wide transition-all duration-300 ${
-                  i === active
-                    ? `border-primary/40 bg-primary/10 text-foreground`
-                    : "border-white/10 bg-card/60 text-muted-foreground/60"
-                }`}
+                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold tracking-wide transition-all duration-300 ${i === active
+                  ? `border-primary/40 bg-primary/10 text-foreground`
+                  : "border-white/10 bg-card/60 text-muted-foreground/60"
+                  }`}
               >
                 <span className={`h-1.5 w-1.5 rounded-full ${i === active ? c.dotColor : "bg-white/20"} shrink-0`} />
                 {c.tag}

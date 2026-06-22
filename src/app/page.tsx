@@ -11,7 +11,7 @@ import {
 import { Counter } from "@/components/portfolio/Counter";
 import { ElegantShapes } from "@/components/portfolio/ElegantShapes";
 import InteractiveBentoGallery, { type MediaItemType } from "@/components/ui/interactive-bento-gallery";
-import FeedbackSlider from "@/components/ui/feedback-slider";
+
 const projMapazzz = "/assets/project-mapazzz.jpg";
 const projKorta = "/assets/project-korta.jpg";
 const projSigad = "/assets/project-sigad.jpg";
@@ -192,7 +192,7 @@ export default function Page() {
         <Services />
         <TechStack />
         <Experience />
-        <FeedbackExperience />
+
         <Contact />
       </main>
       <Footer />
@@ -334,16 +334,6 @@ function Hero() {
                   <img src="./assets/foto.jpg" alt="Serafim Gonga" className="h-full w-full object-cover" />
                 </div>
 
-                {/* 42 Luanda Seal */}
-                <div className="absolute -bottom-4 -right-4 z-30 flex items-center gap-2 rounded-xl border border-warning/30 bg-card/90 backdrop-blur px-3 py-2 text-[10px] font-medium text-foreground shadow-2xl pointer-events-auto select-none transition-transform hover:scale-105">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-warning/15 text-warning shrink-0">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  <div className="text-left leading-tight">
-                    <div className="font-bold text-[10.5px]">42 Luanda</div>
-                    <div className="text-[9.5px] text-muted-foreground">Common Core Graduate</div>
-                  </div>
-                </div>
 
                 {/* Rotating orbit container */}
                 <div className="absolute inset-0 animate-orbit w-full h-full pointer-events-none z-20">
@@ -985,34 +975,7 @@ function Contact() {
   return ContactImpl();
 }
 
-function FeedbackExperience() {
-  return (
-    <section id="feedback" className="relative px-6 py-32">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div>
-            <SectionLabel icon={Sparkles}>Experiência</SectionLabel>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-              A tua opinião <strong className="font-semibold text-foreground">conta</strong>.
-            </h2>
-            <p className="mt-5 max-w-lg text-muted-foreground">
-              Trabalhei comigo num projecto ou exploraste este portfólio? Deixa-me saber como foi a experiência —
-              o feedback é o que me ajuda a entregar melhores produtos a cada iteração.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-white/30" /> Comunicação clara e iterativa</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-white/30" /> Entregas orientadas a impacto</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-white/30" /> Código manutenível e documentado</li>
-            </ul>
-          </div>
-          <div className="flex justify-center">
-            <FeedbackSlider />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+
 
 function ContactImpl() {
   return (

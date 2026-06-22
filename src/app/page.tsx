@@ -11,15 +11,11 @@ import {
 import { Counter } from "@/components/portfolio/Counter";
 import { ElegantShapes } from "@/components/portfolio/ElegantShapes";
 import InteractiveBentoGallery, { type MediaItemType } from "@/components/ui/interactive-bento-gallery";
-import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import FeedbackSlider from "@/components/ui/feedback-slider";
-const portrait = "/assets/foto.png";
 const projMapazzz = "/assets/project-mapazzz.jpg";
 const projKorta = "/assets/project-korta.jpg";
 const projSigad = "/assets/project-sigad.jpg";
 const projAlphaHydrae = "/assets/alpha-hydrae.png";
-const demoSigad = { url: "/videos/demo-sigad.mp4" };
-const demoMapazzz = { url: "/videos/demo-mapazzz.mp4" };
 
 
 const fadeUp = {
@@ -213,9 +209,8 @@ function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const links = [
     ["Sobre", "#about"],
-    ["Cases", "#cases"],
-    ["Demos", "#demos"],
     ["Projetos", "#projects"],
+    ["Demos", "#demos"],
     ["Stack", "#stack"],
     ["Contacto", "#contact"],
   ];

@@ -92,7 +92,7 @@ const projects = [
     name: "SEPE NIF API",
     desc: "API para consulta de dados fiscais por NIF em Angola com cache, rate limit e comprovativos em PDF.",
     stack: ["FastAPI", "Python", "Playwright", "Docker"],
-    img: "/assets/Api-Nif/Captura de ecrã de 2026-06-22 17-20-35.png",
+    img: "/assets/Api-Nif/tela.png",
     link: "https://sepe-nif-api-1.onrender.com/docs#/Consultas%20NIF/get_nif_nif__numero__get"
   },
   {
@@ -127,7 +127,7 @@ const projects = [
     name: "RoomView Boutique",
     desc: "Plataforma de reserva de quartos em tempo real com painel administrativo completo e ótima UX.",
     stack: ["React", "TypeScript", "Vite", "Tailwind", ".NET"],
-    img: "/assets/roomview-boutique/home.png",
+    img: "/assets/roomview-boutique/tela.png",
     link: "#"
   },
   {
@@ -839,9 +839,9 @@ const demoMediaItems: MediaItemType[] = [
     type: "video",
     title: "SEPE NIF API — Consulta Fiscal",
     desc: "Demonstração em vídeo do funcionamento da API e retorno JSON.",
-    url: "/videos/Api-Nif/Gravação de ecrã de 2026-06-22 17-19-45.mp4",
+    url: "/videos/Api-Nif/video.mp4",
     span: "md:col-span-2 md:row-span-1",
-    thumbnail: "/assets/Api-Nif/Captura de ecrã de 2026-06-22 17-20-35.png",
+    thumbnail: "/assets/Api-Nif/tela.png",
   },
 ];
 

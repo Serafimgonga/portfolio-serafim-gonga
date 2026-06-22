@@ -94,7 +94,7 @@ const projects = [
   {
     name: "MapaZZZ — 100Malária",
     desc: "App mobile para monitoramento e prevenção de malária com heatmap, denúncias e modo offline.",
-    stack: ["Flutter", "Node.js", "Firebase", "Google Maps"],
+    stack: ["React Native - Expo", "Node.js", "Firebase", "Google Maps"],
     img: "/assets/MapaZZZ/3.png",
     link: "#"
   },

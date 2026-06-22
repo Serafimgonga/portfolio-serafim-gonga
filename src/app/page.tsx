@@ -246,6 +246,7 @@ function Hero() {
                 { label: "Back-end", icon: Server },
                 { label: "Front-end", icon: Globe },
                 { label: "Mobile", icon: Layers },
+                { label: "Desktop", icon: Layers },
               ].map(({ label, icon: Icon }) => (
                 <span key={label} className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/8 px-3 py-1 text-xs font-semibold text-foreground">
                   <Icon className="h-3 w-3 text-primary" />
@@ -441,9 +442,12 @@ function Metrics() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="mx-auto max-w-5xl"
+        className="mx-auto max-w-6xl"
       >
         <SectionLabel icon={Sparkles}>Sobre mim</SectionLabel>
+        <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+          Quem sou e a minha <strong className="font-semibold text-foreground">experiência num clique.</strong>
+        </h2>
 
         {/* ── Circular composition ── */}
         <div className="mt-6 sm:mt-14 flex items-center justify-center overflow-hidden w-full h-[360px] sm:h-[480px] md:h-[580px]">
@@ -475,8 +479,8 @@ function Metrics() {
                 onClick={() => goTo(i)}
                 style={{ transform: `translate(calc(-50% + ${navPositions[i].x}px), calc(-50% + ${navPositions[i].y}px))` }}
                 className={`absolute left-1/2 top-1/2 flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-semibold tracking-wide transition-all duration-300 ${i === active
-                    ? `border-primary/40 bg-primary/15 text-foreground ${c.dotColor.replace("bg-", "shadow-")} shadow-lg`
-                    : "border-white/10 bg-card/60 text-muted-foreground/60 hover:text-muted-foreground hover:border-white/20"
+                  ? `border-primary/40 bg-primary/15 text-foreground ${c.dotColor.replace("bg-", "shadow-")} shadow-lg`
+                  : "border-white/10 bg-card/60 text-muted-foreground/60 hover:text-muted-foreground hover:border-white/20"
                   }`}
               >
                 <span className={`h-1.5 w-1.5 rounded-full ${i === active ? c.dotColor : "bg-white/20"} shrink-0`} />

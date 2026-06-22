@@ -92,27 +92,6 @@ const projects = [
     link: "https://sepe-nif-api-1.onrender.com/docs#/Consultas%20NIF/get_nif_nif__numero__get"
   },
   {
-    name: "SaaS B2B & Bots",
-    desc: "Plataforma de automação para PMEs com bots Telegram/WhatsApp inteligentes e orquestrador de mensagens.",
-    stack: ["Node.js", "TypeScript", "PostgreSQL", "React Native"],
-    img: "/assets/project-korta.jpg",
-    link: "#"
-  },
-  {
-    name: "CSN — Escola de Condução",
-    desc: "Sistema desktop completo para gestão de alunos, aulas, instrutores, finanças e frotas.",
-    stack: ["C#", "SQL Server", "EF Core", "WinForms"],
-    img: "/assets/project-sigad.jpg",
-    link: "#"
-  },
-  {
-    name: "AppMeuNif",
-    desc: "Aplicação mobile multi-plataforma para consulta de dados fiscais em tempo real.",
-    stack: [".NET MAUI", "C#", "HttpClient", "MVVM"],
-    img: "/assets/AppMeuNif/AppHome1.PNG",
-    link: "#"
-  },
-  {
     name: "MapaZZZ — 100Malária",
     desc: "App mobile para monitoramento e prevenção de malária com heatmap, denúncias e modo offline.",
     stack: ["Flutter", "Node.js", "Firebase", "Google Maps"],
@@ -120,18 +99,11 @@ const projects = [
     link: "#"
   },
   {
-    name: "RoomView Boutique",
-    desc: "Plataforma de reserva de quartos em tempo real com painel administrativo completo e ótima UX.",
-    stack: ["React", "TypeScript", "Vite", "Tailwind", ".NET"],
-    img: "/assets/roomview-boutique/tela.png",
-    link: "#"
-  },
-  {
-    name: "AlphaHydrae",
-    desc: "Sistema SOAR de detecção e resposta automática a incidentes de cibersegurança com IA Generativa — Hackathon ANGOTIC 2026.",
-    stack: ["React", "Django Ninja", "Python", "N8N", "Google Gemini AI", "PostgreSQL"],
-    img: "/assets/alpha-hydrae.png",
-    link: "https://alpha-hydrae.vercel.app/"
+    name: "AppMeuNif",
+    desc: "Aplicação mobile multi-plataforma para consulta de dados fiscais em tempo real.",
+    stack: [".NET MAUI", "C#", "HttpClient", "MVVM"],
+    img: "/assets/AppMeuNif/AppHome1.PNG",
+    link: "https://github.com/Serafimgonga/AppMeuNif"
   },
   {
     name: "VerifiCa",
@@ -140,6 +112,30 @@ const projects = [
     img: "/assets/Verifica.png",
     link: "https://verifica-burla.vercel.app/"
   },
+  {
+    name: "RoomView Boutique",
+    desc: "Plataforma de reserva de quartos em tempo real com painel administrativo completo e ótima UX.",
+    stack: ["React", "TypeScript", "Vite", "Tailwind", ".NET"],
+    img: "/assets/roomview-boutique/tela.png",
+    link: "#"
+  },
+
+  {
+    name: "AlphaHydrae",
+    desc: "Sistema SOAR de detecção e resposta automática a incidentes de cibersegurança com IA Generativa — Hackathon ANGOTIC 2026.",
+    stack: ["React", "Django Ninja", "Python", "N8N", "Google Gemini AI", "PostgreSQL"],
+    img: "/assets/alpha-hydrae.png",
+    link: "https://alpha-hydrae.vercel.app/"
+  },
+
+  {
+    name: "CSN — Escola de Condução",
+    desc: "Sistema desktop completo para gestão de alunos, aulas, instrutores, finanças e frotas.",
+    stack: ["C#", "SQL Server", "EF Core", "WinForms"],
+    img: "/assets/project-sigad.jpg",
+    link: "#"
+  },
+
 ];
 
 const services = [
@@ -797,15 +793,14 @@ function Services() {
 
 /* ------------------- DEMOS ------------------- */
 const demoMediaItems: MediaItemType[] = [
-
   {
     id: 1,
     type: "video",
-    title: "SEPE NIF API — Consulta Fiscal",
-    desc: "Demonstração em vídeo do funcionamento da API e retorno JSON.",
-    url: "/videos/Api-Nif/video.mp4",
+    title: "VerifiCa — Plataforma de Confiança Digital",
+    desc: "Detecção de fraudes, phishing e chamadas suspeitas com IA. Plataforma inclusiva com USSD e SMS. Hackathon ANGOTIC 2026.",
+    url: "https://drive.google.com/file/d/1EoXhTynxB60ehdaEvglPxl5iLEOUOI9L/view?usp=sharing",
     span: "md:col-span-2 md:row-span-2",
-    thumbnail: "/assets/Api-Nif/tela.png",
+    thumbnail: "/assets/Verifica.png",
   },
   {
     id: 2,
@@ -818,29 +813,31 @@ const demoMediaItems: MediaItemType[] = [
   },
   {
     id: 3,
-    type: "image",
-    title: "KORTA — Wallet & Pagamentos",
-    desc: "UI mockup do dashboard de movimentos.",
-    url: projKorta,
-    span: "md:col-span-2 md:row-span-1",
-  },
-  {
-    id: 4,
-    type: "image",
-    title: "SIGAD · Dashboard",
-    desc: "Painel de indicadores e ciclo de prémios.",
-    url: projSigad,
-    span: "md:col-span-2 md:row-span-1",
-  },
-  {
-    id: 5,
     type: "video",
-    title: "VerifiCa — Plataforma de Confiança Digital",
-    desc: "Detecção de fraudes, phishing e chamadas suspeitas com IA. Plataforma inclusiva com USSD e SMS. Hackathon ANGOTIC 2026.",
-    url: "https://drive.google.com/file/d/1EoXhTynxB60ehdaEvglPxl5iLEOUOI9L/view?usp=sharing",
-    span: "md:col-span-2 md:row-span-1",
-    thumbnail: "/assets/Verifica.png",
+    title: "SEPE NIF API — Consulta Fiscal",
+    desc: "Demonstração em vídeo do funcionamento da API e retorno JSON.",
+    url: "/videos/Api-Nif/video.mp4",
+    span: "md:col-span-2 md:row-span-2",
+    thumbnail: "/assets/Api-Nif/tela.png",
   },
+  /*
+    {
+      id: 4,
+      type: "image",
+      title: "KORTA — Wallet & Pagamentos",
+      desc: "UI mockup do dashboard de movimentos.",
+      url: projKorta,
+      span: "md:col-span-2 md:row-span-1",
+    },
+    {
+      id: 5,
+      type: "image",
+      title: "SIGAD · Dashboard",
+      desc: "Painel de indicadores e ciclo de prémios.",
+      url: projSigad,
+      span: "md:col-span-2 md:row-span-1",
+    },*/
+
 
 ];
 
@@ -947,7 +944,7 @@ function TechStack() {
 function Experience() {
   return (
     <section className="px-6 py-28">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         <SectionLabel icon={GraduationCap}>Experiência & Formação</SectionLabel>
         <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Uma linha do tempo.</h2>
 
@@ -982,7 +979,6 @@ function Experience() {
     </section>
   );
 }
-
 
 /* ------------------- CONTACT ------------------- */
 function Contact() {

@@ -195,7 +195,6 @@ export default function Page() {
       <main className="relative z-10">
         <Hero />
         <Metrics />
-        <CaseStudies />
         <Projects />
         <Demos />
         <Services />
@@ -745,96 +744,6 @@ function Metrics() {
           </AnimatePresence>
         </div>
       </motion.div>
-    </section>
-  );
-}
-
-
-/* ------------------- CASE STUDIES ------------------- */
-function CaseStudies() {
-  return (
-    <section id="cases" className="px-6 py-28">
-      <div className="mx-auto max-w-6xl">
-        <SectionLabel icon={Zap}>Estudos de caso</SectionLabel>
-        <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          Produtos reais. Problemas reais. <strong className="font-semibold text-foreground">Resultados mensuráveis.</strong>
-        </h2>
-
-        <div className="mt-14 space-y-8">
-          {caseStudies.map((cs, i) => (
-            <motion.article
-              key={cs.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7 }}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-card/60 p-6 transition-colors hover:border-primary/40 sm:p-8"
-            >
-              <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-                <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{cs.client}</div>
-                  <h3 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">{cs.title}</h3>
-
-                  <dl className="mt-6 space-y-4 text-sm">
-                    <div>
-                      <dt className="text-xs uppercase tracking-wider text-muted-foreground">Problema</dt>
-                      <dd className="mt-1 text-foreground">{cs.problem}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-xs uppercase tracking-wider text-muted-foreground">Solução</dt>
-                      <dd className="mt-1 text-foreground">{cs.solution}</dd>
-                    </div>
-                  </dl>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {cs.stack.map((t) => (
-                      <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-muted-foreground">{t}</span>
-                    ))}
-                  </div>
-
-                  {/*<div className="mt-7 grid grid-cols-3 gap-3">
-                    {cs.results.map((r) => (
-                      <div key={r.v} className="rounded-xl border border-white/10 bg-background/50 p-3">
-                        <div className="text-lg font-semibold text-primary">{r.k}</div>
-                        <div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">{r.v}</div>
-                      </div>
-                    ))}
-                  </div>*/}
-
-                  {("liveUrl" in cs || "videoUrl" in cs) && (
-                    <div className="mt-6 flex flex-wrap gap-3">
-                      {cs.liveUrl && (
-                        <a
-                          href={cs.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-white/10"
-                        >
-                          Visitar Web <ExternalLink className="h-3 w-3" />
-                        </a>
-                      )}
-                      {cs.videoUrl && (
-                        <a
-                          href={cs.videoUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-full bg-white/5 border border-white/15 px-4 py-2 text-xs font-semibold text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
-                        >
-                          Ver Vídeo Demo <ExternalLink className="h-3 w-3" />
-                        </a>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                <div className={`relative overflow-hidden rounded-2xl border border-white/10 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <img src={cs.image} alt={cs.title} width={1200} height={800} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }

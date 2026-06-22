@@ -88,10 +88,62 @@ const caseStudies = [
 ];
 
 const projects = [
-  { name: "AlphaHydrae", desc: "Sistema inteligente (SOAR) de resposta automatizada a incidentes com IA.", stack: ["Django Ninja", "N8N", "Gemini AI", "React"], img: projAlphaHydrae, link: "https://alpha-hydrae.vercel.app/" },
-  { name: "KORTA", desc: "Barber on-demand platform — pedidos ao domicílio com base em geolocalização.", stack: ["Next.js", "Node.js", "PostgreSQL"], img: projKorta, link: "#" },
-  { name: "Mapazzz", desc: "Mapa colaborativo de risco de malária e educação comunitária.", stack: ["React", "Figma", "Node.js"], img: projMapazzz, link: "#" },
-  { name: "SIGAD", desc: "Sistema desktop de avaliação de desempenho para IMOGESTIN.", stack: ["C#", ".NET", "SQL Server"], img: projSigad, link: "#" },
+  {
+    name: "SEPE NIF API",
+    desc: "API para consulta de dados fiscais por NIF em Angola com cache, rate limit e comprovativos em PDF.",
+    stack: ["FastAPI", "Python", "Playwright", "Docker"],
+    img: "/assets/project-sigad.jpg",
+    link: "#"
+  },
+  {
+    name: "SaaS B2B & Bots",
+    desc: "Plataforma de automação para PMEs com bots Telegram/WhatsApp inteligentes e orquestrador de mensagens.",
+    stack: ["Node.js", "TypeScript", "PostgreSQL", "React Native"],
+    img: "/assets/project-korta.jpg",
+    link: "#"
+  },
+  {
+    name: "CSN — Escola de Condução",
+    desc: "Sistema desktop completo para gestão de alunos, aulas, instrutores, finanças e frotas.",
+    stack: ["C#", "SQL Server", "EF Core", "WinForms"],
+    img: "/assets/project-sigad.jpg",
+    link: "#"
+  },
+  {
+    name: "AppMeuNif",
+    desc: "Aplicação mobile multi-plataforma para consulta de dados fiscais em tempo real.",
+    stack: [".NET MAUI", "C#", "HttpClient", "MVVM"],
+    img: "/assets/AppMeuNif/AppHome1.PNG",
+    link: "#"
+  },
+  {
+    name: "MapaZZZ — 100Malária",
+    desc: "App mobile para monitoramento e prevenção de malária com heatmap, denúncias e modo offline.",
+    stack: ["Flutter", "Node.js", "Firebase", "Google Maps"],
+    img: "/assets/MapaZZZ/3.png",
+    link: "#"
+  },
+  {
+    name: "RoomView Boutique",
+    desc: "Plataforma de reserva de quartos em tempo real com painel administrativo completo e ótima UX.",
+    stack: ["React", "TypeScript", "Vite", "Tailwind", ".NET"],
+    img: "/assets/roomview-boutique/home.png",
+    link: "#"
+  },
+  {
+    name: "42ID — Arena de Jogos",
+    desc: "Plataforma de duelos e rankings competitivos em tempo real com WebSockets e Redis.",
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+    img: "/assets/alpha-hydrae.png",
+    link: "#"
+  },
+  {
+    name: "CSN — Académico Inicial",
+    desc: "Primeiro sistema completo de gestão escolar desenvolvido durante formação técnica.",
+    stack: ["C#", "SQL Server"],
+    img: "/assets/project-sigad.jpg",
+    link: "#"
+  }
 ];
 
 const services = [
@@ -792,9 +844,11 @@ function Projects() {
   return (
     <section id="projects" className="px-6 py-28">
       <div className="mx-auto max-w-6xl">
-        <SectionLabel icon={Layers}>Projetos recentes</SectionLabel>
-        <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Coisas que construí ultimamente.</h2>
-        <p className="sr-only">Projetos recentes</p>
+        <SectionLabel icon={Layers}>Projetos</SectionLabel>
+        <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">A minha evolução em engenharia.</h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          Os meus projetos refletem a minha evolução como Software Engineer — desde sistemas académicos até plataformas SaaS e soluções escaláveis em produção.
+        </p>
 
         <div className="mt-12 grid gap-5 md:grid-cols-6">
           {projects.map((p, i) => (

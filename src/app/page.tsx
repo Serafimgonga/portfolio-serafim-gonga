@@ -101,9 +101,27 @@ const services = [
 ];
 
 const experience = [
-  { year: "2024 — 2026", role: "Engenharia de Software", org: "42 Luanda", desc: "Formação peer-to-peer baseada em projetos reais. Sistemas, algoritmos, C / C++ / Bash." },
-  { year: "2021 — 2023", role: "Programador Pleno", org: "DH-IT · Luanda", desc: "Desenvolvi o SIGAD para a IMOGESTIN em C# / SQL Server. Análise de requisitos, formação de utilizadores, integração de sistemas." },
-  { year: "2020 — 2021", role: "Técnico em Informática", org: "Colégio Carvajú", desc: "Projeto final: sistema de gestão para escola de condução (ICSN) em C# e SQL Server." },
+  {
+    year: "2024 — Presente",
+    role: "Engenharia de Software",
+    org: "42 Luanda",
+    desc: "Formação intensiva baseada em projetos, aprendizagem autónoma e revisão por pares. Desenvolvimento avançado em sistemas, algoritmos, programação de baixo nível, arquitetura de software e resolução de problemas complexos.",
+    techs: ["C", "C++", "Bash", "Algoritmos", "Sistemas"],
+  },
+  {
+    year: "2021 — 2023",
+    role: "Programador Pleno",
+    org: "DH-IT · Luanda",
+    desc: "Participei no desenvolvimento do SIGAD para a IMOGESTIN, contribuindo desde a análise de requisitos até à implementação, testes, formação de utilizadores e suporte operacional. Trabalhei na construção de soluções empresariais focadas em eficiência e fiabilidade.",
+    techs: ["C#", ".NET", "SQL Server"],
+  },
+  {
+    year: "2020 — 2021",
+    role: "Técnico em Informática",
+    org: "Colégio Carvajú",
+    desc: "Iniciei a minha trajetória profissional na área tecnológica enquanto desenvolvia o projeto ICSN, um sistema completo de gestão para escolas de condução, abrangendo processos administrativos, gestão de alunos e operações internas.",
+    techs: ["C#", "SQL Server"],
+  },
 ];
 
 const stack = {
@@ -986,6 +1004,15 @@ function Experience() {
               <h3 className="mt-1 text-xl font-semibold tracking-tight">{e.role}</h3>
               <div className="text-sm text-muted-foreground">{e.org}</div>
               <p className="mt-2 text-sm text-muted-foreground">{e.desc}</p>
+              {e.techs && (
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {e.techs.map((t) => (
+                    <span key={t} className="inline-flex items-center rounded-full border border-white/5 bg-white/2 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground/80">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
             </motion.li>
           ))}
         </ol>

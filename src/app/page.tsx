@@ -131,19 +131,12 @@ const projects = [
     link: "#"
   },
   {
-    name: "42ID — Arena de Jogos",
-    desc: "Plataforma de duelos e rankings competitivos em tempo real com WebSockets e Redis.",
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+    name: "AlphaHydrae",
+    desc: "Sistema SOAR de detecção e resposta automática a incidentes de cibersegurança com IA Generativa — Hackathon ANGOTIC 2026.",
+    stack: ["React", "Django Ninja", "Python", "N8N", "Google Gemini AI", "PostgreSQL"],
     img: "/assets/alpha-hydrae.png",
-    link: "#"
+    link: "https://alpha-hydrae.vercel.app/"
   },
-  {
-    name: "CSN — Académico Inicial",
-    desc: "Primeiro sistema completo de gestão escolar desenvolvido durante formação técnica.",
-    stack: ["C#", "SQL Server"],
-    img: "/assets/project-sigad.jpg",
-    link: "#"
-  }
 ];
 
 const services = [
@@ -842,6 +835,15 @@ const demoMediaItems: MediaItemType[] = [
     url: "/videos/Api-Nif/video.mp4",
     span: "md:col-span-2 md:row-span-1",
     thumbnail: "/assets/Api-Nif/tela.png",
+  },
+  {
+    id: 6,
+    type: "video",
+    title: "AlphaHydrae · Resposta a Incidentes",
+    desc: "Detecção de anomalias, análise com IA Gemini e resposta automática via N8N. Hackathon ANGOTIC 2026.",
+    url: "https://drive.google.com/file/d/1xA05KCmdhccAdj7xtKDONj44LOTDd3GP/view?usp=sharing",
+    span: "md:col-span-2 md:row-span-2",
+    thumbnail: "/assets/alpha-hydrae.png",
   },
 ];
 

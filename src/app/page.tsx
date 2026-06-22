@@ -795,21 +795,25 @@ function Services() {
 
 /* ------------------- DEMOS ------------------- */
 const demoMediaItems: MediaItemType[] = [
+
+
   {
     id: 1,
     type: "video",
-    title: "SIGAD — Avaliação de Desempenho",
-    desc: "Sistema desktop em C# / WinForms com SQL Server. Automatiza o ciclo anual de avaliação.",
-    url: demoSigad.url,
-    span: "md:col-span-2 md:row-span-2",
+    title: "SEPE NIF API — Consulta Fiscal",
+    desc: "Demonstração em vídeo do funcionamento da API e retorno JSON.",
+    url: "/videos/Api-Nif/video.mp4",
+    span: "md:col-span-2 md:row-span-1",
+    thumbnail: "/assets/Api-Nif/tela.png",
   },
   {
     id: 2,
     type: "video",
-    title: "Mapazzz — Risco de Malária",
-    desc: "App mobile de mapeamento comunitário em React Native. Hackathon · Escola 42 Luanda.",
-    url: demoMapazzz.url,
+    title: "AlphaHydrae · Resposta a Incidentes",
+    desc: "Detecção de anomalias, análise com IA Gemini e resposta automática via N8N. Hackathon ANGOTIC 2026.",
+    url: "https://drive.google.com/file/d/1xA05KCmdhccAdj7xtKDONj44LOTDd3GP/view?usp=sharing",
     span: "md:col-span-2 md:row-span-2",
+    thumbnail: "/assets/alpha-hydrae.png",
   },
   {
     id: 3,
@@ -827,24 +831,7 @@ const demoMediaItems: MediaItemType[] = [
     url: projSigad,
     span: "md:col-span-2 md:row-span-1",
   },
-  {
-    id: 5,
-    type: "video",
-    title: "SEPE NIF API — Consulta Fiscal",
-    desc: "Demonstração em vídeo do funcionamento da API e retorno JSON.",
-    url: "/videos/Api-Nif/video.mp4",
-    span: "md:col-span-2 md:row-span-1",
-    thumbnail: "/assets/Api-Nif/tela.png",
-  },
-  {
-    id: 6,
-    type: "video",
-    title: "AlphaHydrae · Resposta a Incidentes",
-    desc: "Detecção de anomalias, análise com IA Gemini e resposta automática via N8N. Hackathon ANGOTIC 2026.",
-    url: "https://drive.google.com/file/d/1xA05KCmdhccAdj7xtKDONj44LOTDd3GP/view?usp=sharing",
-    span: "md:col-span-2 md:row-span-2",
-    thumbnail: "/assets/alpha-hydrae.png",
-  },
+
 ];
 
 function Demos() {

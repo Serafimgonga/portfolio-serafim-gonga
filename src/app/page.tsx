@@ -445,14 +445,90 @@ function Metrics() {
         className="mx-auto max-w-6xl"
       >
         <SectionLabel icon={Sparkles}>Sobre mim</SectionLabel>
-        <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Quem sou e a minha <strong className="font-semibold text-foreground">experiência num clique.</strong>
-        </h2>
 
-        {/* ── Circular composition ── */}
-        <div className="mt-6 sm:mt-14 flex items-center justify-center overflow-hidden w-full h-[360px] sm:h-[480px] md:h-[580px]">
-          {/* Outer frame — scaled down on mobile to prevent layout overflow */}
-          <div className="relative flex items-center justify-center scale-[0.58] xs:scale-[0.68] sm:scale-[0.82] md:scale-100 origin-center shrink-0" style={{ width: 560, height: 560 }}>
+        {/* ── Mobile/Tablet Version (< md) ── */}
+        <div className="md:hidden mt-8 flex flex-col gap-5 w-full">
+          {/* Chapter tabs */}
+          <div className="flex flex-wrap justify-center gap-2">
+            {aboutCards.map((c, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold tracking-wide transition-all duration-300 ${
+                  i === active
+                    ? `border-primary/40 bg-primary/10 text-foreground`
+                    : "border-white/10 bg-card/60 text-muted-foreground/60"
+                }`}
+              >
+                <span className={`h-1.5 w-1.5 rounded-full ${i === active ? c.dotColor : "bg-white/20"} shrink-0`} />
+                {c.tag}
+              </button>
+            ))}
+          </div>
+
+          {/* Active Card Body */}
+          <div
+            onClick={next}
+            className="relative cursor-pointer select-none rounded-2xl border border-white/8 bg-card/70 backdrop-blur-xl px-6 py-8 overflow-hidden"
+          >
+            {/* Animated top color bar */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`bar-mob-${active}`}
+                initial={{ scaleX: 0, originX: 0 }}
+                animate={{ scaleX: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${card.color}`}
+              />
+            </AnimatePresence>
+
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={`mob-content-${active}`}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                className="space-y-4"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground/50">
+                    {String(active + 1).padStart(2, "0")} / {aboutCards.length}
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className={`text-2xl font-black ${card.dotColor.replace("bg-", "text-")}`}>{card.stat}</span>
+                    <span className="text-[10px] text-muted-foreground/60">{card.statLabel}</span>
+                  </div>
+                </div>
+
+                <h3 className="text-lg font-bold text-foreground leading-snug">
+                  {card.headline}
+                </h3>
+
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {card.body}
+                </p>
+
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/3 px-3 py-1 text-xs text-muted-foreground/70">
+                  <span className={`h-1.5 w-1.5 rounded-full ${card.dotColor}`} />
+                  {card.accent}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Click hint */}
+            <p className="text-right text-[10px] text-muted-foreground/30 mt-4">
+              clique para avançar →
+            </p>
+          </div>
+        </div>
+
+        {/* ── Circular composition (Desktop only >= md) ── */}
+        <div className="hidden md:flex mt-14 items-center justify-center overflow-hidden w-full h-[580px]">
+          {/* Outer frame */}
+          <div className="relative flex items-center justify-center shrink-0" style={{ width: 560, height: 560 }}>
 
             {/* Ring 1 — outermost dashed */}
             <div className="absolute inset-0 rounded-full border border-dashed border-white/8 pointer-events-none" />
@@ -542,8 +618,8 @@ function Metrics() {
           </div>
         </div>
 
-        {/* ── Expanded card body below the circle ── */}
-        <div className="mt-8 mx-auto max-w-2xl">
+        {/* ── Expanded card body below the circle (Desktop only >= md) ── */}
+        <div className="hidden md:block mt-8 mx-auto max-w-2xl">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={`body-${active}`}

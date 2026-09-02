@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-// 1. Rate Limiting em memória (Máximo de 5 envios por IP a cada 10 minutos)
+// 1. Rate Limiting em memória (Máximo  de 5 envios por IP a cada 10 minutos)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutos

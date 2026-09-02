@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, Download, Mail, Github, Linkedin, MapPin, Phone,
   Code2, Database, Server, Cloud, Sparkles, Briefcase, GraduationCap,
-  ExternalLink, Zap, Layers, Globe, Menu, X, Check,
+  ExternalLink, Zap, Layers, Globe, Menu, X, Check, Loader2, CheckCircle2, AlertCircle
 } from "lucide-react";
 
 import { Counter } from "@/components/portfolio/Counter";
@@ -40,6 +40,20 @@ const scaleIn = {
 
 
 const caseStudies = [
+  {
+    title: "FrotaGo — ERP & Gestão de Frotas para Escolas de Condução",
+    client: "Escolas de Condução em Angola",
+    problem: "Escolas de condução enfrentam desalinhamento operacional no agendamento de aulas, manutenção de veículos e risco de multas graves por caducidade de seguros, DUA, inspecções e licenças.",
+    solution: "Desenvolvi uma plataforma web & móvel em Clean Architecture com CQRS, Angular standalone e ASP.NET Core API. Inclui um módulo exclusivo de conformidade legal angolana e telemetria GPS em tempo real.",
+    stack: ["Angular", "ASP.NET Core", "Clean Architecture", "CQRS", "SQL Server", "EF Core"],
+    results: [
+      { k: "100%", v: "conformidade legal" },
+      { k: "0", v: "conflito de aulas" },
+      { k: "Real-time", v: "gestão operacional" },
+    ],
+    image: "/assets/ERP-Gest-Frota.png",
+    liveUrl: "http://3.93.38.158/",
+  },
   {
     title: "AlphaHydrae — Detecção e Resposta a Incidentes",
     client: "Hackathon de Cibersegurança · ANGOTIC 2026",
@@ -85,6 +99,13 @@ const caseStudies = [
 
 const projects = [
   {
+    name: "FrotaGo",
+    desc: "Plataforma web & móvel para gestão completa de frotas e ERP para escolas de condução em Angola, com alertas de conformidade legal angolana e telemetria em tempo real.",
+    stack: ["Angular", "ASP.NET Core", "Clean Architecture", "CQRS", "SQL Server", "EF Core"],
+    img: "/assets/ERP-Gest-Frota.png",
+    link: "http://3.93.38.158/"
+  },
+  {
     name: "SEPE NIF API",
     desc: "API para consulta de dados fiscais por NIF em Angola com cache, rate limit e comprovativos em PDF.",
     stack: ["FastAPI", "Python", "Playwright", "Docker"],
@@ -119,7 +140,6 @@ const projects = [
     img: "/assets/roomview-boutique/tela.png",
     link: "#"
   },
-
   {
     name: "AlphaHydrae",
     desc: "Sistema SOAR de detecção e resposta automática a incidentes de cibersegurança com IA Generativa — Hackathon ANGOTIC 2026.",
@@ -127,7 +147,6 @@ const projects = [
     img: "/assets/alpha-hydrae.png",
     link: "https://alpha-hydrae.vercel.app/"
   },
-
   {
     name: "CSN — Escola de Condução",
     desc: "Sistema desktop completo para gestão de alunos, aulas, instrutores, finanças e frotas.",
@@ -135,7 +154,6 @@ const projects = [
     img: "/assets/project-sigad.jpg",
     link: "#"
   },
-
 ];
 
 const services = [
@@ -169,8 +187,8 @@ const experience = [
 ];
 
 const stack = {
-  Frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
-  Backend: ["ASP.NET Core", ".NET 6+", "Node.js", "Express", "Prisma", "EF Core"],
+  Frontend: ["Angular", "React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
+  Backend: ["ASP.NET Core", ".NET 6+", "PHP", "Node.js", "Express", "Prisma", "EF Core"],
   Database: ["PostgreSQL", "SQL Server", "MySQL", "MariaDB"],
   DevOps: ["Docker", "Linux", "AWS", "Bash", "SSH", "Git"],
 };
@@ -271,9 +289,10 @@ function Nav() {
 function Hero() {
   const orbitItems = [
     { name: ".NET / C#", icon: "⚡" },
+    { name: "Angular", icon: "🅰️" },
     { name: "React", icon: "⚛️" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "React Native", icon: "📱" },
+    { name: "PHP", icon: "🐘" },
+    { name: "PostgreSQL", icon: "🗄️" },
     { name: "Docker", icon: "🐳" },
   ];
 
@@ -432,7 +451,7 @@ const aboutCards = [
     body: "Desenvolvo aplicações completas, desde arquitetura e APIs até interfaces modernas e infraestrutura. Trabalho com foco em desempenho, segurança e experiência do utilizador.",
     stat: "20+",
     statLabel: "projetos desenvolvidos",
-    accent: ".NET · Node.js · React · PostgreSQL",
+    accent: ".NET · Angular · React · PHP · PostgreSQL",
     color: "from-secondary/20 to-transparent",
     dotColor: "bg-secondary",
   },
@@ -978,6 +997,39 @@ function Contact() {
 
 
 function ContactImpl() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", website: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "", website: "" });
+      } else {
+        setStatus("error");
+        setErrorMessage(data.error || "Não foi possível enviar a mensagem. Tente novamente.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage("Erro de rede. Verifique a sua ligação e tente novamente.");
+    }
+  };
+
   return (
     <section id="contact" className="relative px-6 py-32">
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[400px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[140px]" />
@@ -1008,12 +1060,86 @@ function ContactImpl() {
               </div>
             </div>
 
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-4 rounded-2xl border border-white/10 bg-background/40 p-6">
-              <Field label="Nome"><input required type="text" className="w-full rounded-lg border border-white/10 bg-background/60 px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary/60" placeholder="O teu nome" /></Field>
-              <Field label="Email"><input required type="email" className="w-full rounded-lg border border-white/10 bg-background/60 px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary/60" placeholder="tu@empresa.com" /></Field>
-              <Field label="Mensagem"><textarea required rows={5} className="w-full resize-none rounded-lg border border-white/10 bg-background/60 px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary/60" placeholder="Conta-me sobre o teu projeto..." /></Field>
-              <button type="submit" className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01] glow-green">
-                Enviar mensagem <ArrowRight className="h-4 w-4" />
+            <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-white/10 bg-background/40 p-6">
+              {/* Campo Honeypot invisível para enganar e bloquear bots automatizados */}
+              <div className="hidden" aria-hidden="true">
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                />
+              </div>
+
+              {status === "success" && (
+                <div className="flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-emerald-400 text-sm">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="font-semibold block text-emerald-300">Mensagem enviada com sucesso!</strong>
+                    Obrigado pelo contacto. Serafim responderá ao teu e-mail o mais breve possível.
+                  </div>
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="flex items-start gap-3 rounded-xl border border-rose-500/30 bg-rose-500/10 p-4 text-rose-400 text-sm">
+                  <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="font-semibold block text-rose-300">Erro ao enviar mensagem</strong>
+                    {errorMessage}
+                  </div>
+                </div>
+              )}
+
+              <Field label="Nome">
+                <input
+                  required
+                  type="text"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  disabled={status === "loading"}
+                  className="w-full rounded-lg border border-white/10 bg-background/60 px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary/60 disabled:opacity-50"
+                  placeholder="O teu nome"
+                />
+              </Field>
+              <Field label="Email">
+                <input
+                  required
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  disabled={status === "loading"}
+                  className="w-full rounded-lg border border-white/10 bg-background/60 px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary/60 disabled:opacity-50"
+                  placeholder="tu@empresa.com"
+                />
+              </Field>
+              <Field label="Mensagem">
+                <textarea
+                  required
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  disabled={status === "loading"}
+                  className="w-full resize-none rounded-lg border border-white/10 bg-background/60 px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-primary/60 disabled:opacity-50"
+                  placeholder="Conta-me sobre o teu projeto..."
+                />
+              </Field>
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01] glow-green disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {status === "loading" ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" /> Envia a mensagem...
+                  </>
+                ) : (
+                  <>
+                    Enviar mensagem <ArrowRight className="h-4 w-4" />
+                  </>
+                )}
               </button>
             </form>
           </div>

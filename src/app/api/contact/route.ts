@@ -167,22 +167,21 @@ export async function POST(request: Request) {
         message: "Mensagem enviada com sucesso! Obrigado pelo contacto.",
       });
     } else {
+      // Log interno para o developer (só visível no terminal do servidor)
+      console.error("[SMTP] Credenciais SMTP não configuradas no .env.local. O e-mail não foi enviado.");
       return NextResponse.json(
         {
           success: false,
-          error: "Para os e-mails chegarem à tua caixa de entrada real, configura a tua Palavra-passe de Aplicação no .env.local (SMTP_PASS).",
+          error: "Não foi possível enviar a mensagem de momento. Por favor tente novamente mais tarde.",
         },
-        { status: 400 }
+        { status: 500 }
       );
     }
   } catch (error: any) {
+    // Log detalhado apenas no servidor (nunca exposto ao cliente)
     console.error("Erro ao enviar email via SMTP:", error);
-    let errMsg = "Ocorreu um erro ao tentar enviar a mensagem via SMTP.";
-    if (error?.code === "EAUTH" || error?.responseCode === 535 || error?.responseCode === 534 || error?.message?.includes("Invalid login")) {
-      errMsg = "Erro de autenticação do Gmail: O Gmail rejeitou a palavra-passe. A Google exige uma 'Palavra-passe de Aplicação' de 16 caracteres (gerada em myaccount.google.com/apppasswords) em vez da tua palavra-passe normal.";
-    }
     return NextResponse.json(
-      { success: false, error: errMsg },
+      { success: false, error: "Não foi possível enviar a mensagem de momento. Por favor tente novamente mais tarde." },
       { status: 500 }
     );
   }

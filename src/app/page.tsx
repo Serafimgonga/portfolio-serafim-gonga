@@ -52,7 +52,7 @@ const caseStudies = [
       { k: "Real-time", v: "gestão operacional" },
     ],
     image: "/assets/ERP-Gest-Frota.png",
-    liveUrl: "http://3.93.38.158/",
+    liveUrl: "https://frota-go-omega.vercel.app/",
   },
   {
     title: "AlphaHydrae — Detecção e Resposta a Incidentes",
@@ -103,7 +103,7 @@ const projects = [
     desc: "Plataforma web & móvel para gestão completa de frotas e ERP para escolas de condução em Angola, com alertas de conformidade legal angolana e telemetria em tempo real.",
     stack: ["Angular", "ASP.NET Core", "Clean Architecture", "CQRS", "SQL Server", "EF Core"],
     img: "/assets/ERP-Gest-Frota.png",
-    link: "http://3.93.38.158/"
+    link: "https://frota-go-omega.vercel.app/"
   },
   {
     name: "SEPE NIF API",
